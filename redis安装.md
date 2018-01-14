@@ -10,7 +10,7 @@ title: redis安装
 *  ftp上传  
 
 *  解压  
-![](_image/15-39-26.jpg)
+![](_image/redis安装/15-39-26.jpg)
 
 *  编译  
 
