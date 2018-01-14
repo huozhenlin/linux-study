@@ -22,3 +22,23 @@ db_name [DEAFAULT] CAHRTSET [=] chartsetname
 ALTER DATABASE databasename CHARTSET=charsetname;  
 * 删除数据库  
 DROP databasename;  
+* 查看数据表  
+SHOW TABLES/SHOW TABLES FROM databasename  
+* 查看数据表结构  
+SHOW COLUMNS FROM tablename  
+* 插入数据 
+INSERT INTO tablename VALUES(values)/INSERT INTO tablename(colunmname)VALUES(values)  
+* 查看数据  
+SELECT colunmname FROM tablename  
+## 约束  
+* 主键约束 PRIMARY KEY
+* 外键约束 FOREIGN KEY  
+## 修改列定义  
+ALTER TABLE tablename MODIFY col_name column_definition  /
+ALTER TABLE tablename CHANGE old_column_name new_column_name column_definition  
+## 修改表名  
+ALTER TABLE tablename RENAME new_name  
+RENAME TABLE tablename TO new_tbl_name  
+## 插入多条记录  
+INSERT INTO tablename VALUES(),()  
+ 
