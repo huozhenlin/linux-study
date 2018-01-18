@@ -41,4 +41,24 @@ ALTER TABLE tablename RENAME new_name
 RENAME TABLE tablename TO new_tbl_name  
 ## 插入多条记录  
 INSERT INTO tablename VALUES(),()  
+## 更新记录
+
+## 从其他表选择数据插入  
+INSERT INTO tablename(columnname) SELECT FROM tablename WHERE +condition  
+#约束
+## 外键约束
+REFERENCES  
+## 增加列 
+ALTER TABL tbl_name ADD COLUMN col_name col_defitine  
+## 增加多列 
+ALTER TABLE tbl_name ADD（，，，，，） 
+## 删除列 
+ALTER TABLE tbl_name DROP col_name 
+ALTER TABLE tbl_name DROP col_name  
+ALTER TABLE tbl_name DROP col_name,ADD CLOUMN  
+## 添加约束 
+ALTER TABLE ADD CONSTRAINT PRIMARY KEY(col_name)  
+## 删除默认约束 
+ALTER TABLE tbl_name ALTER col_name DROP DEAFAULT  
  
+
