@@ -95,3 +95,30 @@ $ vim /etc/docker/daemon.json
 }
 ## 其他参考资料 
 [csdn](http://www.linuxidc.com/Linux/2015-01/111091.htm)
+## 更多参考
+1）yum安装docker
+[root@namenode ~]# yum install docker-io
+（2）启动docker
+[root@namenode ~]# /etc/init.d/docker restart
+停止 docker：                                              [失败]
+Starting docker:                                   [确定]
+[root@namenode ~]# /etc/init.d/docker status
+docker 已死，但 pid 文件仍存
+[root@namenode ~]# docker -d
+启动报错，日志查看如下
+tail -f /var/log/docker
+time="2015-03-09T16:05:29+08:00" level="info" msg="+job serveapi(unix:///var/run/docker.sock)"
+time="2015-03-09T16:05:29+08:00" level="info" msg="WARNING: You are running linux kernel version 2.6.32-431.el6.x86_64, which might be unstable running docker. Please upgrade your kernel to 3.8.0."
+time="2015-03-09T16:05:29+08:00" level="info" msg="Listening for HTTP on unix (/var/run/docker.sock)"
+/usr/bin/docker: relocation error: /usr/bin/docker: symbol dm_task_get_info_with_deferred_remove, version Base not defined in file libdevmapper.so.1.02 with link time reference
+（3）google后，解决办法如下
+yum install device-mapper-event-libs
+（4）重启docker
+[root@namenode ~]# /etc/init.d/docker restart
+Stopping docker:                                           [FAILED]
+Starting docker:                                       [  OK  ]
+[root@namenode ~]# /etc/init.d/docker status
+docker (pid  12503) is running...
+
+## 拉取其他源镜像
+> docker pull hub.c.163.com/library/tomcat:latest
